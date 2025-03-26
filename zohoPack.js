@@ -1,14 +1,13 @@
-const AdmZip = require('adm-zip');
-const fs = require('fs').promises;
-const path = require('path');
+import AdmZip from 'adm-zip';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 const config = {
-  buildDir: './build',
-  outputDir: './dist',
+  buildDir: './dist',
+  outputDir: './build',
   outputFile: 'app.zip',
   overwrite: true
 };
-
 
 async function createZipArchive(options = {}) {
   const settings = { ...config, ...options };
@@ -50,8 +49,8 @@ async function createZipArchive(options = {}) {
   }
 }
 
-if (require.main === module) {
-  createZipArchive();
-}
 
-module.exports = { createZipArchive };
+createZipArchive();
+
+
+export { createZipArchive };
