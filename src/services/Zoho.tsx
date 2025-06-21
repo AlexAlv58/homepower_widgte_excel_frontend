@@ -92,6 +92,11 @@ export const insertAccountRecord = async (accountData: any): Promise<RecordInser
   return insertRecord("Accounts", accountData);
 };
 
+export const insertSubmoduleRecord = async (subModuleData: any): Promise<RecordInsertResult> => {
+  return insertRecord("Submodule_Commercial", subModuleData);
+};
+
+
 export const insertContactRecord = async (contactData: any): Promise<RecordInsertResult> => {
   return insertRecord("Contacts", contactData);
 };
